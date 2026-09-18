@@ -105,12 +105,18 @@ Original project proposal.
 
 This project uses the RAVDESS speech dataset.
 
-Only the recordings used in the current experiments are included in this repository.
+A total of 96 neutral speech recordings from 24 speakers were used in the current experiments.
 
 Original dataset:
-
 https://zenodo.org/records/1188976
 
 ## Next Steps
 
-The final stage will include precision, recall and F1-score, further result analysis, and the final project report.
+For the final stage, I plan to:
+
+- Compare mean F0 alone with the full F0 feature set
+- Calculate precision, recall and F1-score
+- Extend the literature review
+- Analyse the classification results in more detail
+- Discuss limitations and possible improvements
+- Complete the final report
