@@ -1,6 +1,3 @@
-# elec5305-project-550200770
-# ELEC5305 Project
-
 ## Comparison of Acoustic Features for Male and Female Speaker Classification Using MATLAB
 
 **Student:** Meiqi Song
