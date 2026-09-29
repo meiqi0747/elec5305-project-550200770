@@ -1,18 +1,27 @@
-## Comparison of Acoustic Features for Male and Female Speaker Classification Using MATLAB
+# ELEC5305 Project
 
-**Student:** Meiqi Song
+## Acoustic Cues and Listener Variability in Gender-Related Voice Perception
+
+**Student:** Meiqi Song  
+**SID:** 550200770
 
 ## Project Overview
 
-This project investigates whether different acoustic features can be used to classify male and female speech recordings using MATLAB.
+This project studies how measurable acoustic features of speech relate to gender-related voice perception.
 
-Three feature sets are compared:
+The original project focused on comparing F0, MFCC and combined acoustic features using KNN and SVM. After receiving project feedback, the final direction was revised to focus more on the acoustic cues themselves and how they may influence listener responses.
+
+The main acoustic features considered are:
 
 - Fundamental Frequency (F0)
-- Mel-Frequency Cepstral Coefficients (MFCCs)
-- Combined features using F0, MFCCs and Spectral Centroid
+- Formant-related features
+- MFCCs
 
-K-Nearest Neighbour (KNN) and a linear Support Vector Machine (SVM) are used for classification.
+The final project will also examine listener agreement and disagreement under different acoustic conditions.
+
+## Research Question
+
+How do fundamental frequency and vocal-tract spectral cues influence listeners’ gender-related perception of speech, and under what acoustic conditions do listeners show greater agreement or disagreement?
 
 ## Feedback 1 – Project Proposal
 
@@ -22,21 +31,27 @@ The original proposal is available here:
 
 [ELEC5305 Project Proposal](ELEC5305%20Project%20Proposal.pdf)
 
-## Feedback 2 – Current Progress
+## Feedback 2 – Preliminary Work
 
-For the current stage, I used 96 neutral speech recordings from the RAVDESS dataset.
+For Feedback 2, I completed a preliminary MATLAB analysis using 96 neutral speech recordings from the RAVDESS dataset.
 
-The dataset includes:
+The dataset contains:
 
 - 24 speakers
-- 48 male recordings
-- 48 female recordings
+- 48 recordings with corpus-provided male labels
+- 48 recordings with corpus-provided female labels
 
-The audio recordings were preprocessed and converted to a common sampling frequency before feature extraction.
+The current MATLAB work includes:
 
-For each recording, F0, MFCC and Spectral Centroid features were extracted. Three feature sets were then tested using KNN and linear SVM classifiers.
-
-Speaker-independent five-fold validation was used so that recordings from the same speaker were not included in both training and testing data.
+- Audio preprocessing and resampling
+- F0 extraction
+- MFCC extraction
+- Spectral Centroid extraction
+- KNN classification
+- Basic linear SVM classification
+- Speaker-independent five-fold validation
+- Accuracy comparison
+- Confusion matrix analysis
 
 ## Preliminary Results
 
@@ -46,77 +61,55 @@ Speaker-independent five-fold validation was used so that recordings from the sa
 | MFCC | 81.25% | 57.29% |
 | Combined | 82.29% | 55.21% |
 
-The best current result was obtained using F0 features with KNN, with an accuracy of **88.54%**.
+The best preliminary result was obtained using F0 features with KNN, with an accuracy of **88.54%**.
 
-The confusion matrix for this model shows that:
+These results are kept as preliminary work. The final project will extend the analysis to formant-related features and perceptual response data.
 
-- 40 of 48 male recordings were classified correctly
-- 45 of 48 female recordings were classified correctly
+## Result Figures
 
-These are preliminary results and may still change during the final stage.
+The current result figures are stored in the `Results_Figures` folder and include:
 
-## Results
+- Mean F0 distribution
+- Average F0 comparison
+- MFCC comparison
+- Spectral Centroid comparison
+- Classification accuracy comparison
+- Best-model confusion matrix
 
-### Mean F0 Distribution
+## Dataset
 
-![Mean F0 Distribution](Results_Figures/Figure1_MeanF0_Distribution.png)
+The preliminary analysis uses neutral speech recordings from the RAVDESS dataset.
 
-### Average MFCC Comparison
+Original dataset:
 
-![Average MFCC Comparison](Results_Figures/Figure3_Average_MFCC_Comparison.png)
+https://zenodo.org/records/1188976
 
-### Spectral Centroid Comparison
-
-![Spectral Centroid Comparison](Results_Figures/Figure4_SpectralCentroid_Comparison.png)
-
-### Classification Accuracy
-
-![Classification Accuracy](Results_Figures/Figure5_Classification_Accuracy.png)
-
-### Best Model Confusion Matrix
-
-![Confusion Matrix](Results_Figures/Figure6_Best_Model_Confusion_Matrix.png)
+Only the recordings used in the current experiment are included in this repository.
 
 ## How to Run
 
 1. Download or clone this repository.
 2. Open the project folder in MATLAB.
-3. Make sure the `Audio_Speech_Actors_01-24` folder is in the same project folder as the Live Script.
+3. Keep the `Audio_Speech_Actors_01-24` folder in the same project folder as the MATLAB Live Script.
 4. Open `Feedback2_Meiqi_Song.mlx`.
 5. Run the Live Script from the beginning.
 
-The script performs dataset loading, preprocessing, feature extraction, classification and result generation.
+The script performs preprocessing, feature extraction, preliminary classification and result generation.
 
-## Project Files
+## Current Files
 
-`Feedback2_Meiqi_Song.mlx`  
-Main MATLAB Live Script.
+- `ELEC5305 Project Proposal.pdf` – original project proposal
+- `Feedback2_Meiqi_Song.mlx` – current MATLAB implementation
+- `Audio_Speech_Actors_01-24` – speech recordings used in the preliminary experiment
+- `Results_Figures` – current result figures
 
-`Audio_Speech_Actors_01-24`  
-RAVDESS neutral speech recordings used in the current experiments.
+## Next Stage
 
-`Results_Figures`  
-Figures generated from the current analysis.
+For the final project, I will:
 
-`ELEC5305 Project Proposal.pdf`  
-Original project proposal.
-
-## Dataset
-
-This project uses the RAVDESS speech dataset.
-
-A total of 96 neutral speech recordings from 24 speakers were used in the current experiments.
-
-Original dataset:
-https://zenodo.org/records/1188976
-
-## Next Steps
-
-For the final stage, I plan to:
-
-- Compare mean F0 alone with the full F0 feature set
-- Calculate precision, recall and F1-score
+- Add formant extraction
+- Use perceptual response data
+- Compare F0 and formant-related cues
+- Analyse listener agreement and disagreement
 - Extend the literature review
-- Analyse the classification results in more detail
-- Discuss limitations and possible improvements
-- Complete the final report
+- Complete the final analysis and report
